@@ -1,0 +1,12 @@
+# Multi-Model Support
+requests>=2.31.0
+
+# Optional: Google Gemini (if using Gemini)
+google-generativeai>=0.3.2
+
+# Optional: OpenAI (if using OpenAI)
+openai>=1.0.0
+
+# Optional: Anthropic (if using Claude)
+anthropic>=0.3.0
+dotenv
