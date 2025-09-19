@@ -6,7 +6,7 @@ from read_data import (
 )
 
 
-seed = 123456
+seed = 12345
 
 question6 = """Jawab dalam bahasa Indonesia. Ini menggunakan bahasa notal ITB.
 Suatu ketika, kepala sekolah Monster University ingin mengetahui prestasi dari para monster pada kelas yang dibuka. Data setiap monster disimpan menggunakan tipe data yang terdefinisi  sebagai berikut. 
@@ -36,14 +36,18 @@ question6_grades = get_question_six_grades(
     read_xlsx_to_dataframe("dataset/IF1210_01-Ujian Akhir Semester-grades.xlsx")
 )
 
-answer_sample = question6_answers.sample(n=10, random_state=seed)
-grade_sample = question6_grades.sample(n=10, random_state=seed)
+answer_sample = question6_answers.sample(n=5, random_state=seed)
+grade_sample = question6_grades.sample(n=5, random_state=seed)
 
 answer_sample = answer_sample.reset_index(drop=True)
 grade_sample = grade_sample.reset_index(drop=True)
 
 for index, students in answer_sample.iterrows():
-    print(f"Original grade: {grade_sample.loc[index]['Q. 6 /4.00']}")
+    print("=" * 3 + " Original grade: " + grade_sample.loc[index]["Q. 6 /4.00"])
+    print("=" * 3 + " NIM: " + str(grade_sample.loc[index]["First name"]))
+    print(answer_sample.loc[index]["Response 6"])
+    print("=" * 50)
+    # print(f"Original grade: {grade_sample.loc[index]['Q. 6 /4.00']}")
     run_main_with_input(
         problem=question6,
         code=answer_sample.loc[index]["Response 6"],
