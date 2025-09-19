@@ -1,0 +1,1246 @@
+=== Original grade: 3.50
+=== NIM: 16520439.0
+fungsi NilaiMaxKelas (T : ArrNilai, kodekelas : string) -> integer
+
+{Input tabel ArrNilai dan kodekelas dan mencari nilai tertinggi di tabel dalam kodekelas sehingga mengoutput nilainya }
+
+KAMUS LOKAL
+
+nilaiMaks : integer
+
+ALGORITMA
+
+if T.Neff = 0 then
+
+    output (-1)
+
+else
+
+    i traversal T.Neff
+
+        if T.KodeKls[i] = kodekelas then
+
+            append (T[i], TabData)
+
+    if TabData.Neff = 0 then
+
+        output (-1)
+
+    else
+
+        nilaiMaks <- 0
+
+        i traversal TabData.Neff
+
+            if nilaiMaks < T.Nilai[i] then
+
+                nilaiMaks <- T.Nilai[i]
+
+        output (nilaiMaks)
+==================================================
+=== Original grade: 4.00
+=== NIM: 16520427.0
+PROGRAM NilaiMaxKelas
+{ Spesifikasi : menerima input ArrNilai (misalnya T) dan kode kelas (misalnya KodeKls), kemudian mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls. Jika array kosong atau jika KodeKls tidak ditemukan di array, dihasilkan nilai -1.} 
+
+KAMUS 
+NMax = 100
+
+ALOGARITMA
+function NilaiMaxKelas (T, KodeKls) -> 
+
+if KodeKls =0 then
+     output (-1)
+
+else 
+     input (KodeKls)
+     i traversal [0..NMax]
+             KodeKls -> NilaiMons.KodeKls[i]
+                  i traversal TNilai[1..NMax]
+                         if TNilai < NMax then
+                                i -> i +1
+                          else 
+                                 output (TNilai)
+==================================================
+=== Original grade: 3.00
+=== NIM: 16520036.0
+procedure NilaiMaxKelas (input T : ArrNilai, input KodeKls : string)
+
+{ mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls }
+
+ALGORITMA
+
+input(T.NilaiMons.ID)
+
+input(T.NilaiMons.KodeKls)
+
+input(T.NilaiMons.Nilai)
+
+input(KodeKls)
+
+max <- 0
+
+if (KodeKls=T.NilaiMons.KodeKls[i]) then
+
+       if (T.NilaiMons.Nilai [i] > max) then
+
+              max <- T.NilaiMons.Nilai[i]
+
+       output(max)
+
+else
+
+       output("-1")
+==================================================
+=== Original grade: 2.75
+=== NIM: 16520008.0
+FUNCTION NilaiMaxKelas(input T: ArrNilai, input KodeKls: string) -> integer
+
+{ NilaiMaxKelas menerima input ArrNilai (misalnya T) dan kode kelas (misalnya KodeKls), kemudian mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls. Jika array kosong atau jika KodeKls tidak ditemukan di array, dihasilkan nilai -1. }
+
+KAMUS
+
+      maks, i: integer
+
+      Found: boolean
+
+ALGORITMA
+
+      { dengan mark dan handling kasus kosong }
+
+      if T.Neff = 0 then
+
+            -> -1
+
+      else
+
+            i <- 1
+
+            Found <- false
+
+            repeat
+
+                  if T.TNilai[i].KodeKls = KodeKls then
+
+                        Found <- true
+
+            until i > T.Neff or Found
+
+            if not(Found) then { KodeKls tidak ditemukan }
+
+                  -> -1
+
+            else
+
+                  maks = T.TNilai[i].Nilai
+
+                  while i <= T.Neff
+
+                        if T.TNilai[i].KodeKls = KodeKls then
+
+                              if maks < T.TNilai[i].Nilai then
+
+                                    maks = T.TNilai[i].Nilai
+
+                        i <- i + 1
+
+                  -> maks
+==================================================
+=== Original grade: 3.50
+=== NIM: 16520404.0
+function NilaiMaxKelas (T : ArrNilai, KodeKls : string) -> integer
+{ menerima input ArrNilai (misalnya T) dan kode kelas (misalnya KodeKls), kemudian mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls. Jika array kosong atau jika KodeKls tidak ditemukan di array, dihasilkan nilai -1.  }
+KAMUS LOKAL
+
+    n, Max : integer
+    found : boolean
+    i, j : integer {untuk iterasi}
+
+ALGORITMA
+
+    n <- T.Neff
+    if n > 0 then
+           found <- false
+           i <- 1
+           while (i <= n) and not(found) do
+                    if T.TNilai[i].KodeKls = KodeKls then
+                          found <- true
+                    i <- i + 1
+           if (found) then
+                 Max <- T.TNilai[1].Nilai
+                 j <- 2
+                 while (j <= n) do
+                           if T.TNilai[j].KodeKls = KodeKls then
+                                     if  T.TNilai[j].Nilai > Max then
+                                           Max <- T.TNilai[j].Nilai
+                           j <- j + 1
+                 -> Max 
+
+           else
+                 -> -1
+                   
+    else
+          -> -1
+==================================================
+=== Original grade: 2.00
+=== NIM: 16520265.0
+{ kodeKls = inputan user; KodeKls = data pada type NilaiMons}
+
+function NIlaiMaxKelas (T : ArrNilai, kodeKls : string) -> integer
+
+{
+
+  I.S. T terdefinisi bertipe ArrNilai, dan kodeKls terdefinisi bertipe string
+
+  F.S. megeluarkan nilai maksimal kelas berdasarkan kodeKls pada data T, mengeluarkan
+
+           (-1) apabila data T kosong atau kodeKls tidak ada pada data KodeKls T
+
+}
+
+   if (T = []) or (valid(T, kodeKls) = False) then
+
+      -> (-1)
+
+   else
+
+      -> max(T, kodeKls)
+
+function valid (T : ArrNilai, kodeKls : string) -> boolean
+
+{
+
+  I.S. T terdefinisi bertipe ArrNilai, dan kodeKls terdefinisi bertipe string
+
+  F.S. menghasilkan True apabila kodeKls terdapat pada data KodeKls T, menghasilkan
+
+           False apabila tidak ditemukan
+
+}
+
+{ KAMUS LOKAL
+
+  i : integer
+
+  ada : boolean
+
+}
+
+   ada <- False
+
+   i traversal [1..T.Neff]
+
+      if (kodeKls = T.TNilai[i].KodeKls) then
+
+         ada <- True
+
+   -> ada
+
+function max (T : ArrNilai, kodeKls : string) -> integer
+
+{
+
+  I.S. T terdefinisi bertipe ArrNilai, dan kodeKls terdefinisi bertipe string
+
+  F.S. Menghasilkan nilai maksimal pada kodeKls dari data T
+
+}
+
+{ KAMUS LOKAL
+
+  i, max : integer
+
+}
+
+   max <- 0
+
+   i traversal [1..T.Neff]
+
+      if (kodeKls = T.TNilai[i].KodeKls) then
+
+         if (max < T.TNilai[i].Nilai) then
+
+            max <- T.TNilai[i].Nilai
+
+   -> max
+==================================================
+=== Original grade: 2.00
+=== NIM: 16520043.0
+PROGRAM fungsi_NilaiMaxKelas
+
+             {fungsi menerima input ArrNilai (misalnya T) dan kode kelas (misalnya KodeKls), kemudian mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls. Jika array kosong atau jika KodeKls tidak ditemukan di array, dihasilkan nilai -1.}
+
+KAMUS
+
+{max, i : integer}
+
+{KodeKls : string}
+
+{T : ArrNilai}
+
+{Constant NMax : Integer = 100}
+
+ 
+
+ALGORITMA
+
+function NilaiMaxKelas (T : ArrNilai, KodeKls : string) -> integer
+
+             {fungsi menerima input ArrNilai (misalnya T) dan kode kelas (misalnya KodeKls), kemudian mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls. Jika array kosong atau jika KodeKls tidak ditemukan di array, dihasilkan nilai -1.}
+
+             max ← -1
+
+             else
+
+                          i traversal [1..NMax]
+
+                                      if T.TNilai[i].KodeKls = KodeKls then
+
+                                                  if max < T.TNilai[i].Nilai then
+
+                                                                max ← T.TNilai[i].Nilai
+
+                                                  else
+
+                                                               max ← max
+
+ 
+
+⟶ max
+==================================================
+=== Original grade: 4.00
+=== NIM: 16520454.0
+Program NilaiMaxKelas
+
+{NilaiMaxKelas yang menerima input ArrNilai (misalnya T) dan kode kelas (misalnya KodeKls), kemudian mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls. Jika array kosong atau jika KodeKls tidak ditemukan di array, dihasilkan nilai -1}
+
+Kamus
+
+                constant NMax : integer = 100
+
+{ NilaiMons: Nilai untuk monster dengan nomor id monster = ID, pada kelas berkode KodeKls, dengan nilai = Nilai }
+
+type NilaiMons : < ID : string, 
+
+                   KodeKls : string, 
+
+                   Nilai : integer[0..100] >
+
+ 
+
+{ Tabel berisi data nilai semua monster }
+
+type ArrNilai : < TNilai : array [1..NMax] of NilaiMons, { penampung data nilai monster }
+
+                  Neff : integer[0..NMax]  { Nilai efektif tabel, Neff=0 berarti tabel kosong } > 
+
+ 
+
+{ Tabel berisi data nama-nama monster }
+
+type ArrNamaMonst : < TNM : array [1..Nmax+1] of string, 
+
+                      Neff : integer[0..NMax] { Nilai efektif tabel, Neff=0 berarti tabel kosong } >
+
+ 
+
+TNilai : Arr [1…Nmax] of integer
+
+ KodeKls : string
+
+i : integer
+
+Algoritma
+
+                input(TNilai)
+
+                input(KodeKls)
+
+                i traversal [1..Nmax]
+
+                                If TNilai=[] or TNilai[i]<>KodeKls then
+
+                                                output(“nilai -1”)
+
+                                                i=i+1
+
+                                else {array tidak kosong dan kode kelas terdapat pada array T)
+
+                                                if TNilai[i]>TNilaiMax and TNilai[i]=KodeKls then
+
+                                                                output(“Nilai tertinggi untuk kelas”,KodeKls, “adalah”, i)
+
+                                                                i=i+1
+
+                                                else
+
+                                                               output(“nilai -1”)
+==================================================
+=== Original grade: 2.75
+=== NIM: 16520472.0
+fungsi NilaiMaxKelas
+
+{menerima input ArrNilai T dan kode kelas KodeKls dan mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls.
+
+jika array kosong atau KodeKls tidak ditemukan, dikembalikan nilai -1}
+
+Realisasi
+
+input (ArrNilai)
+
+input (KodeKls)
+
+if ArrNilai_KodeKls = KodeKls then
+
+  indeks_Max <- 1
+
+  i traversal (2...NMax)
+
+    if ArrNilai_Nilai_indeks_Max <= ArrNilai_Nilai_i then
+
+      indeks_Max <- i
+
+    else
+
+      indeks_Max <- indeks_Max
+
+NilaiMax <- ArrNilai_Nilai_indeks_Max
+
+output (NilaiMax)
+==================================================
+=== Original grade: 2.75
+=== NIM: 16520254.0
+FUNCTION NilaiMaxKelas (T : ArrNilai, KodeKls : string) -> integer
+{ Menerima input ArrNilai dan kode kelas, kemudian mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls. Jika array kosong atau jika KodeKls tidak ditemukan di array, dihasilkan nilai -1. }
+
+KAMUS LOKAL
+                i : integer
+                max : integer
+
+ALGORITMA
+                if Neff = 0 then
+                                -> -1
+
+                else
+                                Found <- false
+                                i <- 1
+                                while (i <= Neff) do
+                                                if (T.TNilai[i].KodeKls = KodeKls) then
+                                                                Found <- true
+                                                                max <- T.TNilai[i].Nilai
+                                                                i <- i +1
+                                                else
+                                                                i <- i + 1
+
+                                if Found then
+                                                -> max
+                                else
+                                                -> -1
+                                               
+==================================================
+=== Original grade: 4.00
+=== NIM: 16520411.0
+function NilaiMaxKelas (T : ArrNilai, KodeKls : string) -> integer
+
+{ Menerima masukkan array nilai dan kode kelas dan mengembalikan nilai tertinggi pada kelas tersebut }
+
+KAMUS LOKAL
+
+     Nilai : integer
+
+     i : integer
+
+ALGORITMA
+
+     Nilai <- -1
+
+     while (T.Neff <> 0) do
+
+          i transveral [0...T.Neff]
+
+                if T[i].TNilai.Nilai = KodeKls then
+
+                     if T[i].TNilai.Nilai > Nilai then
+
+                           Nilai <- T[i].TNilai.Nilai
+==================================================
+=== Original grade: 0.50
+=== NIM: 16520293.0
+function NilaiMaxKelas (ArrNilai: T, kodekelas: KodeKls) -> integer
+
+{ Menerima input T dan KodeKls, kemudian mengembalikan nilai yang merupakan nilai tertinggi untuk KodeKls. Jika array kosong atau jika KodeKls tidak ditemukan di array, dihasilkan nilai -1 }
+
+KAMUS LOKAL
+
+i: integer
+
+max : integer {nilai tertinggi}
+
+ALGORITMA
+
+i <- T.Neff
+
+if T.Neff = 0 then
+
+-> -1
+
+while T.TNilai[i].KodeKls <= T.TNilai[100].Nilai do
+
+       if T.TNilai[i].Nilai > T.TNilai[NMax].Nilai then
+
+           T.Nilai[NMax].Nilai <- max
+
+            T.TNilai[i].Nilai <- T.Nilai[NMax].Nilai
+
+             T.Nilai[NMax].Nilai <- max
+
+-> max
+==================================================
+=== Original grade: 1.25
+=== NIM: 16520325.0
+function NilaiMaxKelas: ArrNilai, Kode: string -> integer
+
+{menerima input ArrNilai (misalnya T) dan kode kelas (misalnya KodeKls), kemudian mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls. Jika array kosong atau jika KodeKls tidak ditemukan di array, dihasilkan nilai -1}
+
+KAMUS LOKAL
+
+    highest : integer[-1..100]
+
+    i: integer[1..(T.Neff)]
+
+    constant NMax: integer = 100
+
+    type NilaiMons : <ID: string, Kodekls: string, Nilai: integer[0..100]>
+
+    type  ArrNilai : <TNilai: array[1..NMax] of NilaiMons, Neff: integer[0,NMax]]>
+
+    type ArrNamaMonst : <TNM: array[1..Nmax+1] of string, Neff: integer[0..NMax]> {Neff=0 berarti tabel kosong}
+
+ALGORITMA
+
+     highest <-1
+
+    if T.Neff = then
+
+               -> highest
+
+     else
+
+               i traversal [1..(T.Neff)]
+
+                             if (T.TNilai[i].KodeKls = kode) then
+
+                                           if (T.TNilai[i].Nilai > highest) then
+
+                                                             high<= T.Tnilai[i].Nilai
+
+               -> highest
+==================================================
+=== Original grade: 2.00
+=== NIM: 16520286.0
+function NilaiMaxKelas (T : ArrNilai, KodeKls : integer) -> integer
+
+    { I.S. Terdefinisi sebuah ArrNilai (T) dan sebuah integer (KodeKls)
+
+       F.S. Mengembalikan nilai (integer) tertinggi untuk KodeKls yang terdefinisi. Apabila array kosong atau KodeKls tidak ditemukan, akan dihasilkan nilai -1 }
+
+    KAMUS LOKAL
+
+    N, i, nilaiMax : integer
+
+    ALGORITMA
+
+    N <- T[Neff]
+
+    if N = 0 then
+
+        -> -1
+
+    else
+
+        nilaiMax <- -1 { nilai minimum dari nilai adalah 0 }
+
+        i traversal [1..N]
+
+            if (T[i][KodeKls] = KodeKls and T[i][KodeKls] > KodeKls) then
+
+                nilaiMax <- T[i][Nilai]
+
+         -> nilaiMax { Apabila tidak ditemukan kode kelas yang sama, nilaiMax akan tetap bernilai -1 }
+==================================================
+=== Original grade: 4.00
+=== NIM: 16520045.0
+function NilaiMaxKelas ( T : ArrNilai, KodeKls : string ) -> integer
+
+{ I.S. Diterima input dari pengguna berupa sebuah array nilai semua monster (T) dan kode kelas (KodeKls); F.S. Dikembalikan nilai tertinggi untuk kode kelas tersebut, -1 jika kode kelas tidak ditemukan atau jika array kosong }
+
+Kamus Lokal
+
+               data_valid, nilai_max, i : integer
+
+Algoritma
+
+               if (T.Neff = 0) then
+
+                              -> -1
+
+               else
+
+                              data_valid <- 0 { data valid berarti nilai yang kode kelasnya sama dengan masukan input }
+
+                              nilai_max <- 0 { nilai max dari kode kelas masukan input ]
+
+                              i traversal [1..Neff]
+
+                                             if (T[i].TNilai.KodeKls = KodeKls) then
+
+                                                            data_valid <- data_valid + 1
+
+                                                            if (T[i].TNilai.Nilai > nilai_max) then
+
+                                                                           nilai_max <- T[i].TNilai.Nilai
+
+                              if (data_valid = 0) then
+
+                                           -> -1
+
+                              else
+
+                                           -> nilai_max
+==================================================
+=== Original grade: 0.50
+=== NIM: 16520262.0
+function NilaiMaxKelas (input T : ArrNilai, input KodeKls : string) -> NilaiMax : Integer
+
+{ I.S. : ArrNilai T terdefinisi, mungkin kosong, penuh, atau belum penuh. KodeKls terdefinisi
+
+  F.S. : Nilai maksimum untuk KodeKls ditemukan }
+
+KAMUS LOKAL
+
+    ada, i, j : integer
+
+ALGORITMA
+
+    if (T.Neff = 0) then
+
+        NilaiMax <- -1
+
+    else
+
+        ada <- 0
+
+        i traversal [1..T.Neff]
+
+            if (T.TNilai[i].KodeKls = KodeKls) then
+
+                ada <- ada + 1
+
+        if (ada = 0) then
+
+            NilaiMax <- -1
+
+        else
+
+            NilaiMax <- 0
+
+            j traversal [1..T.Neff]
+
+                if (T.TNilai[j].Nilai > NilaiMax) and (T.TNilai[j].KodeKls = KodeKls) then
+
+                    NilaiMax <- T.TNilai[j].Nilai
+==================================================
+=== Original grade: 2.75
+=== NIM: 16520170.0
+function NilaiMaxKelas (T : ArrNilai, KodeKls : string) -> integer
+
+{ I.S. : T dan KodeKls terdefinisi
+
+   F.S. : Mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls. Jika array kosong atau jika           
+
+              KodeKls tidak ditemukan di array, dihasilkan nilai -1. }
+
+Kamus
+
+    i, pass, idx : integer
+
+    Kode : string
+
+Algoritma
+
+    Input(Kode)
+
+    pass traversal [1..NMax-1]
+
+        idx <- pass
+
+        if (Kode = T.KodeKls) then
+
+            i traversal [pass+1..NMax]
+
+                  if (T.TNilai[i] > T.TNilai[idx]) then
+
+                      idx <- i
+
+        -> T.TNilai[i]
+
+        else
+
+             -> -1
+==================================================
+=== Original grade: 4.00
+=== NIM: 16520374.0
+function NilaiMaxKelas (T : array of integer, KodeKls : string) -> integer
+
+{ fungsi NilaiMaxKelas menerima input ArrNilai (T) dan kode kelas (KodeKls), kemudian mengembalikan nilai tertinggi untuk kelas KodeKls. Jika array kosong atau jika KodeKls tidak ditemukan di array dihasilkan nilai -1 }
+
+KAMUS
+
+N : integer {Neff}
+
+i : integer
+
+Tmax : integer {Nilai max kelas}
+
+ALGORITMA
+
+if (N>1) then
+
+    i <- 1
+
+    Tmax <- T[0]
+
+    while (i<N) do
+
+        if T[i] > Tmax then
+
+            Tmax <- T[i]
+
+            i <- i + 1
+
+else { N<=0 or KodeKls = False }
+
+    Tmax <- -1
+==================================================
+=== Original grade: 4.00
+=== NIM: 16520287.0
+function NilaiMaxKelas (T : ArrNilai, KodeKls : string) -> integer
+
+KAMUS LOKAL
+
+    ada : boolean
+
+    i : integer
+
+ALGORITMA
+
+    i transversal [1..T.Neff]
+
+        if T.TNM[i].KodeKls = KodeKls then
+
+            if max <T.TNM[i].Nilai
+
+    if not(ada) then
+
+        -> -1
+==================================================
+=== Original grade: 3.00
+=== NIM: 16520346.0
+FUNCTION NILAIMAXKELAS (input  T: ArrNilai, input Y: KodeKls, output T: integer)
+
+KAMUS LOKAL
+
+ALGORITMA
+==================================================
+=== Original grade: 4.00
+=== NIM: 16520197.0
+function NilaiMaxKelas (T : ArrNilai, KodeKls : string) -> integer
+
+{ Menerima input ArrNilai (misalnya T) dan kode kelas (misalnya KodeKls), kemudian mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls. Jika array kosong atau jika KodeKls tidak ditemukan di array, dihasilkan nilai -1. }
+
+KAMUS LOKAL
+
+    count : integer
+
+    i : integer
+
+    max : integer
+
+ALGORITMA
+
+    if (T.Neff = 0) then
+
+        -> -1
+
+    else
+
+        count <- 0
+
+        i <- 1
+
+        max <- 0
+
+        while (i <= T.Neff) do
+
+            if (T.TNilai[i].KodeKls = KodeKls) then
+
+                count <- count + 1
+
+                if (T.TNilai[i].Nilai > max) then
+
+                    max <- T.TNilai[i].Nilai
+
+        if (count = 0) then
+
+            -> -1
+
+        else
+
+            -> max
+==================================================
+=== Original grade: 4.00
+=== NIM: 16520398.0
+FUNCTION NilaiMaxKelas (T : ArrNilai, KodeKls : string) -> integer
+
+{ Menerima input T (bertipe ArrNilai) dan KodeKls, dan mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls. Jika array kosong atau jika KodeKls tidak ditemukan di array, dihasilkan nilai -1. }
+
+ 
+
+KAMUS LOKAL
+
+    i, count, MAX : integer
+
+ 
+
+ALGORITMA
+
+    if (T.Neff = 0) then
+
+        -> -1
+
+    else { T.Neff > 0 }
+
+        count <- 0
+
+ 
+
+        i <- 1
+
+        MAX <- -1 { nilai yang akan terganti jika ditemukan kode kelas }
+
+        while (i <= T.Neff and MAX = -1) do
+
+            if (T.TNilai[i].KodeKls = KodeKls) then
+
+                MAX <- T.TNilai[i].Nilai
+
+            i <- i + 1
+
+        { i > T.Neff atau MAX != -1 }
+
+        { diperoleh inisialisasi nilai MAX }
+
+ 
+
+        i traversal [1..T.Neff]
+
+            if (T.TNilai[i].KodeKls = KodeKls) then
+
+                count <- count + 1
+
+                if (T.TNilai[i].Nilai > MAX) then
+
+                    MAX <- T.TNilai[i].Nilai
+
+        { diperoleh nilai MAX untuk seluruh tabel }
+
+ 
+
+        if (count = 0) then
+
+            -> -1
+
+        else
+
+            -> MAX
+==================================================
+=== Original grade: 2.00
+=== NIM: 16520364.0
+function NilaiMaxKelas (T : ArrNilai, KodeKls : string) -> integer
+{Mengembalikan nilai tertinggi untuk kelas KodeKls}
+KAMUS LOKAL
+    nilai : integer
+ALGORITMA
+    nilai <- -1
+    if T.Neff = 0 then
+        -> nilai
+    else
+        i traversal [0..T.Neff]
+            if T.Tnilai[i].KodeKls = KodeKls then {KodeKls di baris ini mengacu pada KodeKls input fungsi}
+                if T.Tnilai[i].Nilai > nilai then
+                    nilai <- T.TNilai[i].Nilai
+        -> nilai
+==================================================
+=== Original grade: 4.00
+=== NIM: 16520316.0
+function NilaiMaxKelas (T : ArrNilai , KodeKls : string ) -> integer
+
+Kamus
+
+    i,j : integer
+
+    IdxMax : integer
+
+    Tab : array [1..Nmax] of integer
+
+Algoritma
+
+    i <- 0
+
+    j traversal [1..T.Neff]
+
+        if (KodeKls = T.TNilai[j].KodeKls) then
+
+            i <- i + 1
+
+            Tab[i] <- T.TNilai[j].Nilai
+
+    if ((i > 0) or (T.Neff > 0) ) then
+
+        IdxMax <- 1
+
+        k traversal [2..i]
+
+                if (Tab[IdxMax]  <  Tab[k] then
+
+                    IdxMax <- K
+
+        -> Tab[k]
+
+    else
+
+        -> -1
+==================================================
+=== Original grade: 4.00
+=== NIM: 16520190.0
+Program NilaiMax
+
+{mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls}
+
+Kamus
+
+function NilaiMaxKelas (T: ArrNilai, Kode:KodeKls) -> array of (1..Nmax) of integer
+
+{ menerima input ArrNilai (misalnya T) dan kode kelas (misalnya KodeKls), kemudian mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls. Jika array kosong atau jika KodeKls tidak ditemukan di array, dihasilkan nilai -1.}
+
+Kode : boolean
+
+N,i, pass, Max: integer
+
+Algoritma
+
+Kode <- True
+
+if (N < 0  or not(Kode) then  {Bila array kosong atau kode kelas tak ditemukan}
+
+   -> -1
+
+else
+
+   pass tansversal (1..Nmax)
+
+         Max <- T[1]    {Mengassign T[1] sebagai max}
+
+         pass <- i + 1   {Proses pencarian}
+
+          i <- 1
+
+         while (T[Max[i]] < T[i+1]) and (i>1) then
+
+                 T[Max[i+1]] <- T[i]
+
+                 i <- i +1
+
+         if (T[Max] > T[i]] then   {Bila Max ditemukan}
+
+          -> T[Max[i]]
+
+        else
+
+          -> T[1]
+==================================================
+=== Original grade: 2.75
+=== NIM: 16520241.0
+Program PrestasiMonster
+
+{ Program untuk mengetahui prestasi monster di Monster University }
+
+ 
+
+KAMUS
+
+    { tipe data bentukan }
+
+    { NilaiMons : Nilai untuk monster dengan nomor id monster = ID, pada kelas berkode KodeKls,
+
+      dengan nilai = Nilai }
+
+    type NilaiMons : < ID  : string,
+
+                        KodeKls : string,
+
+                        Nilai : integer[0..100] >
+
+ 
+
+    { Tabel berisi data nama-nama monster }
+
+    type ArrNilai : < TNilai : array[1..NMax] of NilaiMons, { penampung data nilai monster }
+
+                       Neff : integer[0..NMax] { Nilai efektif tabel, Neff = 0 berarti tabel kosong }
+
+ 
+
+    { Tabel berisi data nama-nama monster }
+
+    type ArrNamaMonst : < TNM : array[1..NMax+1] of string,
+
+                           Neff : integer[0..NMax] { Nilai efektif tabel, Neff = 0 berarti tabel kosong } 
+
+ 
+
+    { Definisi dan spesifikasi fungsai }
+
+    function NilaiMaxKelas (input T : ArrNilai, input KodeKls : string) -> real
+
+    { Menerima input berupa array nilai beserta kode kelas dan menghasilkan nilai maksimum monster dalam kelas }
+
+    
+
+REALISASI FUNGSI DAN PROSEDUR
+
+    function NilaiMaxKelas (input T : ArrNilai, input KodeKls : string) -> real
+
+        KAMUS LOKAL
+
+            nilaiMax, Nilai : integer[0..100]
+
+            i : integer
+
+        ALGORITMA
+
+        { urutkan }
+
+            T[NMax] <- x { sentinel }
+
+            i <- 1
+
+            while (T[i] != x) do 
+
+                i <- i + 1
+
+            { memeriksa apakah T[i] = x }
+
+            if (i < NMax) then
+
+                nilaiMax <- NMax
+
+            else
+
+                     nilaiMax <- i
+
+            -> nilaiMax
+==================================================
+=== Original grade: 4.00
+=== NIM: 16520227.0
+ KAMUS
+
+constant NMAX : integer = 100 
+ 
+{ NilaiMons: Nilai untuk monster dengan nomor id monster = ID, pada kelas berkode KodeKls, dengan nilai = Nilai } 
+type NILAIMONS : < ID : string,  
+                   KodeKls : string,  
+                   Nilai : integer[0..100] > 
+ 
+{ Tabel berisi data nilai semua monster } 
+type ARRNILAI : < TNilai : array [1..NMax] of NilaiMons, { penampung data nilai monster } 
+                  Neff : integer[0..NMax]  { Nilai efektif tabel, Neff=0 berarti tabel kosong } >  
+ 
+{ Tabel berisi data nama-nama monster } 
+type ARRNAMAMONST : < TNM : array [1..Nmax+1] of string,  
+                      Neff : integer[0..NMax] { Nilai efektif tabel, Neff=0 berarti tabel kosong } >
+
+ 
+
+ 
+
+FUNCTION_ _NilaiMaxKelas (T : ArrNilai , KodeKls: NilaiMons.KodeKLS) -> (x : integer)
+
+{ Fungsi NilaiMaxKelas mencari nilai maksimum dari Monster pada kode kelas yang diinputkan. Jika tidak ditemukan kode kelas atau array kosong maka x = -1}
+
+ 
+
+KAMUS LOKAL
+
+               i : integer {untuk iterasi pada ArrNilai}
+
+               TempMax : integer {nilai temporary untuk maksimum}
+
+               Found : boolean {boolean untuk mengecek apakah kode kelas ada}
+
+ 
+
+ALGORITMA
+
+if (T.Neff = 0) then
+
+               -> -1
+
+ 
+
+else
+
+               Found <- False
+
+               i traversal[1..Neff-1]
+
+                              if (T.TNilai[i].KodeKls = KodeKls) then
+
+                                             Found <- True
+
+                                             TempMax <- T.TNilai[i].Nilai
+
+                                             if (TempMax < T.TNilai[i+1].Nilai) then
+
+                                                            TempMax <- T.TNilai[i+1].Nilai
+              
+
+              
+
+               if (Found) then
+
+                              -> TempMax
+
+               else
+
+                              -> -1
+==================================================
+=== Original grade: 1.00
+=== NIM: 16520174.0
+FUNCTION NilaiMaxKelas (T: ArrNilai, KodeKls: string) -> integer
+
+( Fungsi ini menerima ArrNilai T dan kode kelas KodeKls yang ingin dicari lalu mengembalikannya dengan nilai tertinggi di kelas tersebut. Jika array kosong atau jika KodeKls tidak ditemukan di array, dihasilkan nilai -1. }
+
+KAMUS
+
+constant NMAX : integer = 100 
+
+type NILAIMONS : < ID : string,  
+                   KodeKls : string,  
+                   Nilai : integer[0..100] > 
+
+type ARRNILAI : < TNilai : array [1..NMax] of NilaiMons, 
+                  Neff : integer[0..NMax] >  
+
+T : ArrNilai
+
+KodeKls : string
+
+nilaimaks, n : integer
+
+ALGORITMA
+
+input(T)
+
+input(KodeKls)
+
+nilaimaks <- 0
+
+n <- 0
+
+repeat T[1] times
+
+    if (T[0][0+n][1] = KodeKls) then
+
+        if T[0][0+n][2] > nilaimaks then
+
+            nilaimaks <- T[0][0+n][2]
+
+        n + 1
+
+if (nilaimaks = 0) then
+
+    return -1
+
+else 
+
+    return nilaimaks
+==================================================
+=== Original grade: 4.00
+=== NIM: 16520029.0
+fungsi NilaiMaxKelas (T : ArrNilai , kode : string) -> integer
+
+{menghasilkan nilai tertinggi dalam suatu kelas}
+
+Kamus Lokal
+
+ada, i, max: integer
+
+kode : string
+
+Algoritma
+
+Input(kode)
+
+ada <-0
+
+i traversal [1..T.Neff]
+
+                if kode = T[i].TNilai.KodeKls then
+
+                                ada <- ada + 1
+
+max <- 0
+
+if ada > 0 then
+
+                i traversal [1..T.Neff]
+
+                                if T[i].TNilai.Nilai > max then
+
+                                                max <-  T[i].TNilai.Nilai
+
+else
+
+                max <- (-1)
+
+->  max
+==================================================
+=== Original grade: 3.00
+=== NIM: 16520414.0
+KAMUS LOKAL
+
+KodeKls, Z, i, max : integer
+
+               T : array of integer
+
+ 
+
+FUNCTION NILAIMAXKELAS (input T: array of integer , input KK : string , output Z : integer )
+
+               max <- -1
+
+               i traversal [1..Neff] {Looping untuk semua isi dari T}
+
+                              if KK = T[i].KodeKelas then
+
+                                             j traversal [1..Nmax] {Looping untuk semua isi dari T[i] }
+
+                                                            if max < T[i].Nilai[j] then
+
+                                                                           max <- T[i].Nilai[j]
+
+                                            
+
+               -> max
+==================================================
