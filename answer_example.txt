@@ -1,0 +1,165 @@
+==================================================
+✅ grader.py found! Running examples...
+=== EXAMPLE 1: Basic Usage ===
+--- Results for alice ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: None/100
+Issues found: 0
+Feedback:
+----------------------------------------
+
+=== EXAMPLE 2: Different Problems ===
+--- Results for bob ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 79/100
+Issues found: 4
+Feedback:
+  - Lack of documentation (docstring). The function lacks a docstring explaining its purpose, parameters, and return value.
+  - Missing complexity analysis in comments. The code does not include comments explaining its time and space complexity.
+  - No explicit input validation or error handling. The function assumes the input `s` will always be a string.
+----------------------------------------
+--- Results for charlie ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 45/100
+Issues found: 3
+Feedback:
+  - The function lacks robust input validation for `n`. Providing negative numbers or non-integer values will lead to an unhandled `RecursionError`.
+  - The `factorial` function is missing a docstring. A docstring is essential for explaining the function's purpose, its parameters, and what it returns without needing to read the implementation details.
+  - The code lacks comments explaining the logic, especially for the base case and recursive step, and does not include an analysis of its time and space complexity.
+----------------------------------------
+--- Results for diana ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 77/100
+Issues found: 4
+Feedback:
+  - Lack of documentation (docstring). The function is missing a docstring that explains its purpose, arguments, and return value.
+  - Missing comments for complexity analysis. The code does not include comments explaining its time and space complexity.
+  - No test cases provided. The submission does not include any unit tests to verify the function's correctness across various scenarios.
+----------------------------------------
+
+=== EXAMPLE 3: Same Problem, Different Solutions ===
+--- Results for alice_v1 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: None/100
+Issues found: 0
+Feedback:
+----------------------------------------
+--- Results for bob_v1 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 79/100
+Issues found: 4
+Feedback:
+  - Missing docstring for the function.
+  - Missing comments for time and space complexity analysis.
+  - No unit tests were provided for the function.
+----------------------------------------
+--- Results for charlie_v1 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 77/100
+Issues found: 4
+Feedback:
+  - Lack of a docstring for the function. A docstring is essential for explaining the function's purpose, arguments, and return value.
+  - No comments provided for time and space complexity analysis, which was part of the rubric requirements for efficiency and data structures.
+  - No test cases were submitted alongside the function. Demonstrating code correctness through tests is a critical skill.
+----------------------------------------
+--- Results for diana_v1 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 60/100
+Issues found: 5
+Feedback:
+  - Missing function docstring.
+  - Inefficient space usage due to creating an intermediate list.
+  - Lack of unit tests.
+----------------------------------------
+
+=== EXAMPLE 4: Complex Problems ===
+--- Results for expert_1 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 75/100
+Issues found: 4
+Feedback:
+  - Missing function docstring.
+  - Lack of comments for time and space complexity analysis.
+  - No test cases provided with the submission.
+----------------------------------------
+--- Results for expert_2 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 79/100
+Issues found: 5
+Feedback:
+  - Missing function docstring.
+  - Missing comments for time and space complexity analysis.
+  - Missing rationale for data structure selection.
+----------------------------------------
+--- Results for expert_3 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 81/100
+Issues found: 3
+Feedback:
+  - Missing function docstring.
+  - Lack of inline comments for algorithm explanation.
+  - No test cases provided with the submission.
+----------------------------------------
+
+=== EXAMPLE 5: Buggy Code Examples ===
+--- Results for buggy_1 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 49/100
+Issues found: 4
+Feedback:
+  - Lack of function docstring.
+  - Highly inefficient time complexity due to redundant recursive calls.
+  - No unit tests provided for the function.
+----------------------------------------
+--- Results for buggy_2 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 69/100
+Issues found: 4
+Feedback:
+  - Missing function docstring.
+  - Missing comments for complexity analysis.
+  - No unit tests provided.
+----------------------------------------
+--- Results for buggy_3 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 40/100
+Issues found: 5
+Feedback:
+  - The outer loop `for i in range(2, n)` iterates up to `n-1`, meaning `n` itself is never checked for primality. The problem asks for primes 'up to n', which typically includes `n` if it's prime.
+  - The prime checking logic uses trial division up to `i-1` for each number `i`, leading to an O(n^2) time complexity, which is highly inefficient for finding all primes up to `n`.
+  - The function lacks a docstring explaining its purpose, parameters, and return value. There are also no inline comments to improve code clarity.
+----------------------------------------
+
+🎉 All examples completed!
+
+📚 Usage Summary:
+This script calls the main function from grader.py with different problems and code samples
+Each example shows how the grader handles various scenarios
