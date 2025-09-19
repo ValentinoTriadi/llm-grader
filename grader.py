@@ -225,7 +225,7 @@ def main(problem: str = None, student_code: str = None, detailed: bool = False):
     else:
         try:
             # TODO: ADJUST THIS TO YOUR PREFERRED MODEL
-            grader = CodeGrader(API_KEY, model="gemini-2.5-flash", provider="gemini")
+            grader = CodeGrader(API_KEY, model="gemini-2.5-pro", provider="gemini")
 
             result = grader.grade_code(
                 problem=problem

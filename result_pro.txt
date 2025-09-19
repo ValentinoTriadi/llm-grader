@@ -1,0 +1,224 @@
+=== Original grade: 3.50
+=== NIM: 16520439.0
+fungsi NilaiMaxKelas (T : ArrNilai, kodekelas : string) -> integer
+
+{Input tabel ArrNilai dan kodekelas dan mencari nilai tertinggi di tabel dalam kodekelas sehingga mengoutput nilainya }
+
+KAMUS LOKAL
+
+nilaiMaks : integer
+
+ALGORITMA
+
+if T.Neff = 0 then
+
+    output (-1)
+
+else
+
+    i traversal T.Neff
+
+        if T.KodeKls[i] = kodekelas then
+
+            append (T[i], TabData)
+
+    if TabData.Neff = 0 then
+
+        output (-1)
+
+    else
+
+        nilaiMaks <- 0
+
+        i traversal TabData.Neff
+
+            if nilaiMaks < T.Nilai[i] then
+
+                nilaiMaks <- T.Nilai[i]
+
+        output (nilaiMaks)
+==================================================
+--- Results for 16520135 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: None/100
+Issues found: 0
+Feedback:
+----------------------------------------
+=== Original grade: 4.00
+=== NIM: 16520427.0
+PROGRAM NilaiMaxKelas
+{ Spesifikasi : menerima input ArrNilai (misalnya T) dan kode kelas (misalnya KodeKls), kemudian mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls. Jika array kosong atau jika KodeKls tidak ditemukan di array, dihasilkan nilai -1.} 
+
+KAMUS 
+NMax = 100
+
+ALOGARITMA
+function NilaiMaxKelas (T, KodeKls) -> 
+
+if KodeKls =0 then
+     output (-1)
+
+else 
+     input (KodeKls)
+     i traversal [0..NMax]
+             KodeKls -> NilaiMons.KodeKls[i]
+                  i traversal TNilai[1..NMax]
+                         if TNilai < NMax then
+                                i -> i +1
+                          else 
+                                 output (TNilai)
+==================================================
+--- Results for 16520058 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: None/100
+Issues found: 0
+Feedback:
+----------------------------------------
+=== Original grade: 3.00
+=== NIM: 16520036.0
+procedure NilaiMaxKelas (input T : ArrNilai, input KodeKls : string)
+
+{ mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls }
+
+ALGORITMA
+
+input(T.NilaiMons.ID)
+
+input(T.NilaiMons.KodeKls)
+
+input(T.NilaiMons.Nilai)
+
+input(KodeKls)
+
+max <- 0
+
+if (KodeKls=T.NilaiMons.KodeKls[i]) then
+
+       if (T.NilaiMons.Nilai [i] > max) then
+
+              max <- T.NilaiMons.Nilai[i]
+
+       output(max)
+
+else
+
+       output("-1")
+==================================================
+--- Results for 16520468 ---
+🎓 Code Grading System
+==================================================
+❌ Error: Failed to connect to gemini API. Please check your API key and internet connection.
+Check your API key and internet connection
+----------------------------------------
+=== Original grade: 2.75
+=== NIM: 16520008.0
+FUNCTION NilaiMaxKelas(input T: ArrNilai, input KodeKls: string) -> integer
+
+{ NilaiMaxKelas menerima input ArrNilai (misalnya T) dan kode kelas (misalnya KodeKls), kemudian mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls. Jika array kosong atau jika KodeKls tidak ditemukan di array, dihasilkan nilai -1. }
+
+KAMUS
+
+      maks, i: integer
+
+      Found: boolean
+
+ALGORITMA
+
+      { dengan mark dan handling kasus kosong }
+
+      if T.Neff = 0 then
+
+            -> -1
+
+      else
+
+            i <- 1
+
+            Found <- false
+
+            repeat
+
+                  if T.TNilai[i].KodeKls = KodeKls then
+
+                        Found <- true
+
+            until i > T.Neff or Found
+
+            if not(Found) then { KodeKls tidak ditemukan }
+
+                  -> -1
+
+            else
+
+                  maks = T.TNilai[i].Nilai
+
+                  while i <= T.Neff
+
+                        if T.TNilai[i].KodeKls = KodeKls then
+
+                              if maks < T.TNilai[i].Nilai then
+
+                                    maks = T.TNilai[i].Nilai
+
+                        i <- i + 1
+
+                  -> maks
+==================================================
+--- Results for 16520008 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: None/100
+Issues found: 0
+Feedback:
+----------------------------------------
+=== Original grade: 3.50
+=== NIM: 16520404.0
+function NilaiMaxKelas (T : ArrNilai, KodeKls : string) -> integer
+{ menerima input ArrNilai (misalnya T) dan kode kelas (misalnya KodeKls), kemudian mengembalikan nilai yang merupakan nilai tertinggi untuk kelas KodeKls. Jika array kosong atau jika KodeKls tidak ditemukan di array, dihasilkan nilai -1.  }
+KAMUS LOKAL
+
+    n, Max : integer
+    found : boolean
+    i, j : integer {untuk iterasi}
+
+ALGORITMA
+
+    n <- T.Neff
+    if n > 0 then
+           found <- false
+           i <- 1
+           while (i <= n) and not(found) do
+                    if T.TNilai[i].KodeKls = KodeKls then
+                          found <- true
+                    i <- i + 1
+           if (found) then
+                 Max <- T.TNilai[1].Nilai
+                 j <- 2
+                 while (j <= n) do
+                           if T.TNilai[j].KodeKls = KodeKls then
+                                     if  T.TNilai[j].Nilai > Max then
+                                           Max <- T.TNilai[j].Nilai
+                           j <- j + 1
+                 -> Max 
+
+           else
+                 -> -1
+                   
+    else
+          -> -1
+==================================================
+--- Results for 16520411 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 57/100
+Issues found: 2
+Feedback:
+  - Inisialisasi `Max` mengambil nilai dari elemen pertama array (`T.TNilai[1]`) tanpa memeriksa apakah elemen tersebut termasuk dalam `KodeKls` yang dicari. Ini akan menghasilkan nilai maksimum yang salah jika nilai tertinggi di kelas target lebih rendah dari nilai elemen pertama.
+  - Algoritma menggunakan dua loop terpisah untuk melintasi array. Loop pertama hanya untuk memeriksa keberadaan `KodeKls`, dan loop kedua untuk mencari nilai maksimum. Ini tidak efisien karena data dibaca dua kali.
+----------------------------------------

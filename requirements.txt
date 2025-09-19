@@ -10,3 +10,6 @@ openai>=1.0.0
 # Optional: Anthropic (if using Claude)
 anthropic>=0.3.0
 dotenv
+
+pandas
+openpyxl
