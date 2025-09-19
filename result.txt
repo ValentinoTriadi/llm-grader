@@ -1,0 +1,342 @@
+Original grade: 3.50
+--- Results for 16520135 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 21/100
+Issues found: 6
+Feedback:
+  - Kesalahan akses field. Tipe `ArrNilai` memiliki field `TNilai` yang merupakan array dari `NilaiMons`. Field `KodeKls` ada di dalam `NilaiMons`. Akses yang benar seharusnya `T.TNilai[i].KodeKls`.
+  - Pelanggaran batasan soal. Soal secara eksplisit menyatakan 'Tidak diperkenankan membuat dan menggunakan type/fungsi/prosedur baru.' `TabData` adalah struktur data baru yang tidak didefinisikan dan `append` adalah prosedur baru. Selain itu, `T[i]` juga merupakan akses yang salah; seharusnya `T.TNilai[i]`.
+  - Bergantung pada struktur data `TabData` yang tidak diizinkan dan tidak didefinisikan.
+----------------------------------------
+Original grade: 4.00
+--- Results for 16520058 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 4/100
+Issues found: 12
+Feedback:
+  - Masalah meminta implementasi fungsi, namun kode dimulai dengan deklarasi `PROGRAM`, yang menunjukkan program lengkap, bukan hanya fungsi.
+  - Definisi fungsi `function NilaiMaxKelas (T, KodeKls) ->` tidak menyertakan tipe data untuk parameter `T` dan `KodeKls`, serta tipe data kembalian fungsi.
+  - Kondisi `if KodeKls =0 then` salah. `KodeKls` adalah string, tidak dapat dibandingkan dengan integer `0`. Kondisi ini juga tidak secara akurat memeriksa array kosong atau kode kelas yang tidak ditemukan.
+----------------------------------------
+Original grade: 3.00
+--- Results for 16520468 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 1/100
+Issues found: 13
+Feedback:
+  - Fungsi yang diminta adalah 'fungsi' (function) yang mengembalikan nilai, namun implementasi menggunakan 'procedure'.
+  - Pemanggilan 'input(T.NilaiMons.ID)' tidak diperlukan dan salah. Parameter 'T' sudah berisi data yang diperlukan.
+  - Pemanggilan 'input(T.NilaiMons.KodeKls)' tidak diperlukan dan salah. Parameter 'T' sudah berisi data yang diperlukan.
+----------------------------------------
+Original grade: 2.75
+--- Results for 16520008 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: None/100
+Issues found: 0
+Feedback:
+----------------------------------------
+Original grade: 3.50
+--- Results for 16520411 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 49/100
+Issues found: 2
+Feedback:
+  - Inisialisasi variabel `Max` dilakukan dengan nilai dari elemen pertama array (`T.TNilai[1].Nilai`) tanpa memeriksa apakah elemen tersebut termasuk dalam `KodeKls` yang dicari. Ini dapat menyebabkan `Max` diinisialisasi dengan nilai yang tidak relevan atau bahkan salah jika `T.TNilai[1].KodeKls` berbeda dari `KodeKls` yang diinginkan.
+  - Algoritma melakukan dua kali iterasi penuh pada array (`T.Neff`). Iterasi pertama untuk memeriksa keberadaan `KodeKls`, dan iterasi kedua untuk mencari nilai maksimum. Meskipun kompleksitas waktu asimtotik tetap O(N), ini kurang efisien dibandingkan dengan satu kali iterasi.
+----------------------------------------
+Original grade: 2.00
+--- Results for 16520035 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 54/100
+Issues found: 5
+Feedback:
+  - Solusi melanggar batasan soal yang melarang pembuatan fungsi atau prosedur baru. Mahasiswa membuat dua fungsi baru (`valid` dan `max`).
+  - Pengecekan array kosong `(T = [])` tidak tepat. Untuk tipe `ArrNilai`, kondisi array kosong ditunjukkan oleh `T.Neff = 0`.
+  - Solusi melakukan dua kali iterasi penuh pada array (`valid` lalu `max`) padahal pencarian nilai maksimum dan pengecekan keberadaan kelas dapat dilakukan dalam satu kali iterasi.
+----------------------------------------
+Original grade: 2.00
+--- Results for 16520043 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 33/100
+Issues found: 4
+Feedback:
+  - Kesalahan sintaksis: 'else' tanpa 'if' yang mendahului. Ini akan menyebabkan kode gagal kompilasi atau eksekusi.
+  - Batas iterasi loop salah. Seharusnya 'i traversal [1..T.Neff]' untuk mengiterasi hanya elemen efektif dalam array, bukan 'NMax'. Menggunakan 'NMax' dapat menyebabkan akses di luar batas atau memproses data yang tidak valid jika T.Neff < NMax.
+  - Baris 'else max ← max' adalah kode yang redundan dan tidak perlu. Ini tidak mengubah nilai 'max' dan hanya menambah kompleksitas yang tidak perlu.
+----------------------------------------
+Original grade: 4.00
+--- Results for 16520050 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 2/100
+Issues found: 11
+Feedback:
+  - Kode ini adalah program utama, bukan definisi fungsi `NilaiMaxKelas` seperti yang diminta oleh soal. Soal secara eksplisit meminta pembuatan fungsi.
+  - Deklarasi `TNilai : Arr [1…Nmax] of integer` salah. `TNilai` adalah field dari tipe `ArrNilai`, bukan array independen, dan tipenya adalah `array [1..NMax] of NilaiMons`.
+  - Fungsi seharusnya menerima input sebagai parameter, bukan membaca dari konsol menggunakan `input()`.
+----------------------------------------
+Original grade: 2.75
+--- Results for 16520442 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 26/100
+Issues found: 7
+Feedback:
+  - Deklarasi parameter fungsi 'input (ArrNilai)' dan 'input (KodeKls)' tidak sesuai dengan notasi ITB yang umum. Seharusnya 'fungsi NilaiMaxKelas (T : ArrNilai, KodeKls : string) : integer'.
+  - Akses field 'ArrNilai_KodeKls' salah. 'ArrNilai' adalah record yang berisi array, bukan record 'NilaiMons' tunggal. Logika ini juga tidak memfilter berdasarkan KodeKls untuk seluruh array, hanya mencoba membandingkan satu nilai yang tidak terdefinisi dengan benar.
+  - Inisialisasi 'indeks_Max <- 1' mengasumsikan array tidak kosong dan memiliki setidaknya satu elemen. Ini akan menyebabkan kesalahan jika 'T.Neff' adalah 0.
+----------------------------------------
+Original grade: 2.75
+--- Results for 16520254 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 57/100
+Issues found: 7
+Feedback:
+  - Variabel 'Neff' diakses tanpa kualifikasi objek 'T'. 'Neff' adalah anggota dari record 'ArrNilai' yang merupakan tipe dari parameter 'T'.
+  - Sintaks pengembalian nilai '-> -1' tidak standar untuk pseudocode. Umumnya menggunakan 'RETURN -1' atau 'RESULT := -1'.
+  - Variabel 'Found' digunakan tetapi tidak dideklarasikan di bagian 'KAMUS LOKAL'.
+----------------------------------------
+Original grade: 4.00
+--- Results for 16520191 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 20/100
+Issues found: 6
+Feedback:
+  - Kondisi perulangan `while (T.Neff <> 0)` tidak tepat. `T.Neff` adalah ukuran efektif array dan tidak berubah di dalam loop. Jika `T.Neff > 0`, loop ini akan berjalan tanpa henti (infinite loop).
+  - Sintaks `i transveral [0...T.Neff]` bukan merupakan sintaks pseudocode yang valid untuk perulangan. Selain itu, indeks array dalam definisi soal dimulai dari 1, bukan 0.
+  - Akses field `T[i].TNilai.Nilai` salah. `T` adalah `ArrNilai`, yang memiliki field `TNilai` (array of `NilaiMons`). Akses yang benar adalah `T.TNilai[i].KodeKls` untuk kode kelas. Selain itu, terjadi type mismatch karena membandingkan `T.TNilai[i].Nilai` (integer) dengan `KodeKls` (string).
+----------------------------------------
+Original grade: 0.50
+--- Results for 16520464 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 18/100
+Issues found: 7
+Feedback:
+  - Parameter `ArrNilai: T` memiliki tipe data yang salah. Seharusnya `ArrNilai: ArrNilai` sesuai definisi tipe.
+  - Parameter `kodekelas: KodeKls` memiliki tipe data yang salah. `KodeKls` adalah nama field dalam `NilaiMons`, bukan tipe data. Seharusnya `kodekelas: string`.
+  - Kondisi `while T.TNilai[i].KodeKls <= T.TNilai[100].Nilai do` memiliki beberapa masalah:
+1. Kesalahan tipe data: Membandingkan `string` (`KodeKls`) dengan `integer` (`Nilai`).
+2. Logika perulangan salah: Tidak mengiterasi elemen dari `1` hingga `T.Neff`.
+3. Potensi akses di luar batas: `T.TNilai[100]` dapat di luar batas jika `T.Neff < 100`.
+----------------------------------------
+Original grade: 1.25
+--- Results for 16520125 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 54/100
+Issues found: 7
+Feedback:
+  - Kesalahan sintaksis: Kondisi 'if T.Neff = then' tidak lengkap. Seharusnya ada nilai yang dibandingkan setelah operator '='.
+  - Kesalahan sintaksis: '-> highest' bukan merupakan cara yang benar untuk mengembalikan nilai dalam notasi pseudocode ini.
+  - Kesalahan sintaksis dan penamaan variabel: 'high<=' bukan operator penugasan yang benar dan variabel 'high' tidak konsisten dengan 'highest'.
+----------------------------------------
+Original grade: 2.00
+--- Results for 16520123 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 42/100
+Issues found: 5
+Feedback:
+  - Parameter 'KodeKls' is defined as 'integer' in the function signature, but the problem statement and the 'NilaiMons' type definition indicate it should be a 'string'. This is a critical type mismatch.
+  - The I.S. (Initial State) specification incorrectly states that 'KodeKls' is an 'integer', which contradicts the problem's data type definition.
+  - Incorrect access to the 'Neff' field of the 'ArrNilai' record. 'T[Neff]' is syntactically incorrect; it should be 'T.Neff'.
+----------------------------------------
+Original grade: 4.00
+--- Results for 16520045 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 60/100
+Issues found: 2
+Feedback:
+  - Kesalahan akses elemen array dalam struktur. Variabel `T` bertipe `ArrNilai`, yang memiliki field `TNilai` berupa array. Akses yang benar seharusnya melalui `T.TNilai[i].KodeKls`.
+  - Kesalahan akses elemen array dalam struktur. Sama seperti sebelumnya, akses yang benar seharusnya melalui `T.TNilai[i].Nilai`.
+----------------------------------------
+Original grade: 0.50
+--- Results for 16520171 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 77/100
+Issues found: 1
+Feedback:
+  - Algoritma melakukan dua kali traversal penuh pada array (satu untuk menghitung keberadaan kelas, satu lagi untuk mencari nilai maksimum) padahal kedua operasi tersebut dapat digabungkan dalam satu traversal.
+----------------------------------------
+Original grade: 2.75
+--- Results for 16520170 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 7/100
+Issues found: 7
+Feedback:
+  - Fungsi melakukan operasi input (`Input(Kode)`). Fungsi seharusnya menggunakan parameter yang diberikan (`KodeKls`) dan tidak melakukan input/output kecuali memang dirancang khusus untuk itu.
+  - Batas loop `pass traversal [1..NMax-1]` dan `i traversal [pass+1..NMax]` tidak benar. Loop seharusnya beriterasi dari `1` hingga `T.Neff` untuk memproses elemen yang efektif dalam array.
+  - Akses `T.KodeKls` salah. `KodeKls` adalah field dari record `NilaiMons`, bukan dari `ArrNilai`. Seharusnya `T.TNilai[pass].KodeKls` atau `T.TNilai[i].KodeKls` tergantung konteksnya. Selain itu, variabel `Kode` yang diinputkan seharusnya adalah parameter `KodeKls`.
+----------------------------------------
+Original grade: 4.00
+--- Results for 16520119 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 13/100
+Issues found: 7
+Feedback:
+  - Tipe data parameter `T` tidak sesuai dengan spesifikasi `ArrNilai`. `ArrNilai` adalah record yang berisi array `TNilai` dan `Neff`, bukan `array of integer` langsung.
+  - Variabel `N` dideklarasikan sebagai representasi `Neff` tetapi tidak diinisialisasi dari `T.Neff`. Penggunaan `N` tanpa inisialisasi akan menyebabkan perilaku tidak terdefinisi atau error saat runtime.
+  - Kondisi awal `if (N>1)` salah. Jika `Neff` adalah 1, nilai tersebut harus dipertimbangkan sebagai nilai maksimum. Saat ini, jika `Neff=1`, fungsi akan langsung mengembalikan -1.
+----------------------------------------
+Original grade: 4.00
+--- Results for 16520129 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 30/100
+Issues found: 5
+Feedback:
+  - Akses field 'T.TNM[i].KodeKls' salah. Berdasarkan definisi tipe 'ArrNilai', field yang benar adalah 'T.TNilai[i].KodeKls'.
+  - Variabel 'max' digunakan tanpa deklarasi di 'KAMUS LOKAL' dan tanpa inisialisasi. Ini akan menyebabkan error kompilasi atau runtime.
+  - Pernyataan 'if max <T.TNM[i].Nilai' tidak lengkap dan salah secara sintaksis. Ini tidak memiliki klausa 'then' dan logika pembaruan nilai maksimum.
+----------------------------------------
+Original grade: 3.00
+--- Results for 16520337 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 1.5/100
+Issues found: 5
+Feedback:
+  - The function body (KAMUS LOKAL and ALGORITMA sections) is completely empty, indicating no implementation was provided for the problem's logic.
+  - Incorrect function signature for returning a value. The problem asks the function to 'mengembalikan nilai', implying the function itself returns an integer. The 'output T: integer' syntax is incorrect for this purpose in Pascal-like languages, and 'T' conflicts with an existing input parameter.
+  - Ambiguous parameter type for 'Y'. 'KodeKls' is a field name of type string within NilaiMons, not a defined type. The parameter should explicitly state its type, which is likely 'string'.
+----------------------------------------
+Original grade: 4.00
+--- Results for 16520083 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 46/100
+Issues found: 1
+Feedback:
+  - Variabel `i` yang berfungsi sebagai indeks iterasi tidak diinkrementasi di dalam loop `while`. Ini menyebabkan loop menjadi tak terbatas untuk setiap kasus di mana `T.Neff > 0`.
+----------------------------------------
+Original grade: 4.00
+--- Results for 16520398 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 87/100
+Issues found: 2
+Feedback:
+  - Algoritma menggunakan dua kali iterasi (satu loop `while` dan satu loop `i traversal`) untuk menemukan nilai maksimum. Loop `while` pertama bertujuan untuk inisialisasi `MAX` dengan nilai pertama yang cocok, yang kemudian diulang dan diperbarui di loop kedua. Ini sedikit kurang efisien dibandingkan pendekatan satu kali iterasi.
+  - Tidak ada komentar yang menjelaskan kompleksitas waktu dan ruang dari fungsi yang dibuat.
+----------------------------------------
+Original grade: 2.00
+--- Results for 16520244 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 56/100
+Issues found: 1
+Feedback:
+  - Rentang iterasi loop `i traversal [0..T.Neff]` salah. Berdasarkan definisi `ArrNilai`, indeks array dimulai dari 1 (`array [1..NMax]`). Mengakses `T.Tnilai[0]` akan menyebabkan kesalahan akses di luar batas (out-of-bounds error) pada sebagian besar implementasi bahasa pemrograman, dan `T.Tnilai[T.Neff]` adalah elemen terakhir yang valid. Rentang yang benar seharusnya `[1..T.Neff]`.
+----------------------------------------
+Original grade: 4.00
+--- Results for 16520106 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: None/100
+Issues found: 0
+Feedback:
+----------------------------------------
+Original grade: 4.00
+--- Results for 16520383 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: None/100
+Issues found: 0
+Feedback:
+----------------------------------------
+Original grade: 2.75
+--- Results for 16520241 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 12/100
+Issues found: 8
+Feedback:
+  - Tipe kembalian fungsi `NilaiMaxKelas` adalah `real`, padahal nilai yang diharapkan adalah `integer` (nilai monster atau -1).
+  - Variabel `Nilai` dideklarasikan di KAMUS LOKAL tetapi tidak pernah digunakan dalam algoritma.
+  - Komentar `{ urutkan }` menyesatkan karena kode tidak melakukan pengurutan.
+----------------------------------------
+Original grade: 4.00
+--- Results for 16520227 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 66/100
+Issues found: 5
+Feedback:
+  - Terdapat kesalahan penulisan pada deklarasi fungsi. Seharusnya 'FUNCTION NilaiMaxKelas' tanpa spasi ekstra atau underscore.
+  - Batas iterasi loop `[1..Neff-1]` tidak tepat. Seharusnya loop berjalan hingga `Neff` untuk mencakup semua elemen efektif dalam array `T.TNilai`. Jika `T.Neff` adalah 1, loop ini tidak akan berjalan sama sekali, padahal mungkin ada data yang harus diproses.
+  - Variabel `TempMax` diinisialisasi ulang setiap kali `KodeKls` yang cocok ditemukan. Ini menyebabkan `TempMax` tidak dapat melacak nilai maksimum secara keseluruhan dari semua monster dalam kelas tersebut, karena nilainya akan terus direset atau ditimpa oleh nilai monster yang ditemukan belakangan.
+----------------------------------------
+Original grade: 1.00
+--- Results for 16520315 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 16/100
+Issues found: 7
+Feedback:
+  - Redefinisi konstanta dan tipe data yang sudah diberikan dalam soal. Bagian KAMUS dalam fungsi seharusnya hanya berisi deklarasi variabel lokal.
+  - Penggunaan `input(T)` dan `input(KodeKls)` tidak tepat. `T` dan `KodeKls` adalah parameter input fungsi, bukan variabel yang harus dibaca dari input standar di dalam fungsi.
+  - Konstruksi perulangan `repeat T[1] times` salah. `T[1]` mengacu pada field kedua dari record `ArrNilai` yaitu `Neff`, sehingga seharusnya `T.Neff`. Selain itu, `repeat ... times` bukan sintaks perulangan yang benar untuk iterasi sejumlah kali dalam notasi ITB/Pascal. Seharusnya menggunakan `for` atau `while`.
+----------------------------------------
+Original grade: 4.00
+--- Results for 16520029 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: 30/100
+Issues found: 6
+Feedback:
+  - Variabel lokal 'kode' dideklarasikan di 'Kamus Lokal' dengan nama yang sama persis dengan parameter fungsi 'kode'. Ini menyebabkan 'shadowing' dan dapat membingungkan serta menyebabkan kesalahan jika tidak ditangani dengan hati-hati.
+  - Pemanggilan 'Input(kode)' tidak sesuai. Parameter 'kode' sudah diterima oleh fungsi sebagai input. Membaca ulang 'kode' dari input standar akan menimpa nilai parameter yang seharusnya digunakan dan menyebabkan perilaku yang tidak diharapkan.
+  - Akses elemen struktur data salah. 'T' adalah variabel bertipe 'ArrNilai', yang memiliki field 'TNilai' (sebuah array of NilaiMons). Akses yang benar untuk elemen ke-i adalah 'T.TNilai[i].KodeKls'.
+----------------------------------------
+Original grade: 3.00
+--- Results for 16520414 ---
+🎓 Code Grading System
+==================================================
+✅ Grading successful!
+Grade: None/100
+Issues found: 0
+Feedback:
+----------------------------------------
